@@ -4,10 +4,12 @@ function markAsDone(todos) {
 
 function transform(index, todos, modifiedTodos){
     if(index < todos.length){
-        // on this line - prepend the string 'done - ' to each `todo` description
-        // on this line - call transform recursively
-        return modifiedTodos
+        index++
+        todos[index].unshift('done - ');
+        return transform(index, todos, modifiedTodos)
     }else{
         return modifiedTodos
     }
 }
+
+document.getElementById('result').innerHTML = markAsDone('one', 'two', 'three');5
