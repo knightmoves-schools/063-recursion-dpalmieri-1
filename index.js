@@ -12,4 +12,4 @@ function transform(index, todos, modifiedTodos){
     }
 }
 
-document.getElementById('result').innerHTML = markAsDone('one', 'two', 'three');5
+document.getElementById('result').innerHTML = markAsDone('one', 'two', 'three');
