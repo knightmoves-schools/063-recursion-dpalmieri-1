@@ -1,15 +1,15 @@
-function markAsDone(todos) {
-    return transform(0, todos, []);
-}
+let count = 0;
 
-function transform(index, todos, modifiedTodos){
-    if(index < todos.length){
-        index++
-        todos[index].unshift('done - ');
-        return transform(index, todos, modifiedTodos)
-    }else{
-        return modifiedTodos
-    }
+function markAsDone(todos) {
+    //return transform(0, todos, []);
+    todos[count] = 'done - ' + todos[count];
+    count++;
 }
+    if(count < todos.length){
+
+        return markAsDone(todos);
+    }else{
+        return todos;
+    }
 
 document.getElementById('result').innerHTML = markAsDone('one', 'two', 'three');
