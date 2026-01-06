@@ -1,14 +1,7 @@
-let count = 0;
-
-function markAsDone(todos) {
-    //return transform(0, todos, []);
-    count++;
-    
-    if(count < todos.length){
-    todos[count] = 'done - ' + todos[count];
-        return markAsDone(todos);
-    }else{
-        return todos;
-    }
+function markAsDone(todos, index = 0, acc = []) {
+  if (index >= todos.length) return acc;
+  acc.push('done - ' + todos[index]);
+  return markAsDone(todos, index + 1, acc);
 }
-document.getElementById('result').innerHTML = markAsDone('one', 'two', 'three');
+
+document.getElementById('result').innerHTML = markAsDone(['one', 'two', 'three']).join(' ');
